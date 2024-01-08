@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+.container{
+    position: absolute;
+    left: 25%;
+    width: 900px;
+    height:900px;
+    /* margin: -500px 0 0 -500px; */
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    background-image:linear-gradient( 45deg,rgb(0, 0, 0) 25%,transparent 25%,transparent 75%,black 75%,black),
+    linear-gradient( -45deg,black 25%,transparent 25%,transparent 75%,black 75%,black);
+    background-size: 100px 100px,10px 10px;
+    transform:perspective(1000px) translateZ(-250px) rotateX(70deg);
+    transform-style: preserve-3d;
+    animation: rotate 20s linear infinite;
+
+}
+@keyframes rotate {
+    form{
+        transform:perspective(1000px) translatez(-250px);
+    }
+    to{
+        transform:perspective(1000px) translatez(-250px) rotateX(70deg) rotate(360deg);
+    }
+}
+.board{
+    position: absolute;
+    top: 35%;
+    left: 35%;
+    width: 250px;
+    height:250px;
+    /* background-color: rgba(0, 26, 255, 0.651); */
+    transform-style: preserve-3d;
+    transform: translateZ(125px);
+}
+span{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(0, 26, 255, 0.651); */
+    border: 5px solid rgb(43, 100, 255);
+}
+.wall1{
+    transform: translateZ(125px);
+    background-color: rgba(0, 26, 255, 0.651);
+}
+.wall2{
+    transform:rotatey(180deg) translatez(125px);
+    background-color: rgba(0, 26, 255, 0.651);
+}
+.wall3{
+    transform:rotatey(-90deg) translatex(-125px);
+    background-color: rgba(0, 26, 255, 0.651);
+    transform-origin: left;
+}
+.wall4{
+    transform:rotatey(90deg) translatex(125px);
+    background-color: rgba(0, 26, 255, 0.651);
+    transform-origin: right;
+}
+.wall5{
+    transform:rotatex(-90deg) translateZ(125px);
+    background-color: rgba(0, 26, 255, 0.651);
+}
+.wall6{
+    transform:rotatex(-90deg) translatez(125px);
+    background-color: rgba(0, 26, 255, 0.651);
+}
+
